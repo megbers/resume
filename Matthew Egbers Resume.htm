@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:doc="http://xsltsl.org/xsl/documentation/1.0" xmlns:dt="http://xsltsl.org/date-time" xmlns:str="http://xsltsl.org/string" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-16">
+    <title>Matthew Egbers</title>
+    <style type="text/css" id="static">
+    /* Reset browser defaults *//* --------------------------------------------------------------
+    Reset default browser CSS.
+    Based on work by Eric Meyer:
+    * http://meyerweb.com/eric/tools/css/reset/index.html
+    -------------------------------------------------------------- *//* v1.0 | 20080212 */html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+    body {line-height: 1; background: #FFF; text-align: left;}
+    ol, ul {list-style: none;}
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+    /* remember to define focus styles! */:focus {outline: 0;}
+    /* remember to highlight inserts somehow! */ins {text-decoration: none;}
+    del {text-decoration: line-through;}
+    /* tables still need 'cellspacing="0"' in the markup */table {border-collapse: collapse; border-spacing: 0;}
+    a img {border: none;}
+    /* Typography */
+
+    /*START old disc style for LI
+    ul, li {list-style-type: disc; margin: 0 0 0 12px; padding: 0;}
+    ul li {margin: 0 0 0 18px; padding: 0 0 0 3px;}
+    END old disc style for LI*/
+
+    /*START Image treatment for LI*/
+    ul {list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNJREFUeNpiYCAAtIB4OxDfAOIoZIm9QPwfiv8AMT8TVOIvLqMMgPgqEL8F4ky8lgIEGAC+Fgk0YKVkbwAAAABJRU5ErkJggg==");}
+    ul, li {margin: 0 0 0 13px; padding: 0;}
+    ul li {margin: 0 0 0 16px; padding: 0 0 0 3px;}
+    /*END Image treatment for LI*/
+
+    .clear {clear: both; height: 0;}
+    br.clear {line-height: 0;}
+    div.name {font-size: 15px; line-height: 17px; font-weight: bold; padding: 0; text-align: right;}
+    div.logo {display: none;}
+    div.heading {clear: both; font-weight: bold;}
+    div.address {position: relative; text-align: right; font-size: 0.917em; line-height: 1.25em; margin-top: 11px;}
+    div.address2 {position: relative; text-align: left; font-size: 0.917em; line-height: 1.25em;}
+    span.jobtitle, span.degree, span.companyname_educ, span.programline, span.excComp {font-weight: bold;}
+    span.cdesc {font-style: italic;}
+    div#document table {width: 100%;}
+    .table_wrapper {width: 100%; margin-top: 0;}
+    table.twocol td {width: 50%;}
+    table.skills {width: 100%;}
+    table.skills th, table.skills td {width: 20%; text-align: center;}
+    table.skills th {text-decoration: underline;}
+    table.skills .skillname, table.skills .skillrating {text-align: left; width: 35%;}
+    table.skills .skillrating {width: 20%;}
+    table.skills .skillyears, table.skills .skilllast {width: 19%;}
+    table.skills .pad1 {width: 5%;}
+    table.skills .pad2, table.skills .pad3 {width: 1%;}
+    span.paddedline {display: block; clear: both;}
+    .nodisplay {display: none;}
+    .datesWrapper {float: right;}
+    div.lowerborder {padding-top: 2px;}
+    div.resumeTitle, div.execRsmTitle {font-weight: bold; text-align: center;}
+    td.twocol_2 {border-left:1px  solid #FEFDFD;}
+
+    /*FIX for FORCEFULLY making left margin ZERO for CL*/
+    div#document .sectionCL .paragraph {margin-top: 0!important;}
+    div#document .sectionDT, div#document .sectionCLSR {margin-left: 70%;}
+    .myGap{height:2px;}
+  </style>
+    <style type="text/css" id="unparsed">
+    div#document {line-height: {$FTLH}px;}
+    div#document table {line-height: {$FTLH}px;}
+    div#document.pagesize {width: {$DOCW}px;}
+    div#document.vmargins {padding-top: {$TBMR}px; padding-bottom: {$TBMR}px;}
+    div#document.hmargins {padding-left: {$LRMR}px; padding-right: {$LRMR}px;}
+    div#document .section {margin-top: {$SCSP}px;}
+    div#document div.firstsection {margin-top: 0;}
+    div#document div.SECTION_CNTC {margin-top: 0;}
+    div#document div.heading {margin-bottom: {$SHMB}px;}
+    div#document div.paragraph {margin-top: {$PRSP}px;}
+    div#document div.firstparagraph {margin-top: 0;}
+    div#document .singlecolumn, div#document .maincolumn {margin-left: {$PIND}px; width: {$MACW}px;}
+    .fontsize {font-size: {$FTSZ}px;}
+    .fontface {font-family: {$FTFC};}
+    div#document div.sectiontitle {font-size: {$HDSZ}px; line-height: {$HDLH}px;}
+    div.name {font-size: {$NMSZ}px; line-height: {$NMLH}px;}
+    div#document .bottomborder {border-bottom: {$BTBR}px solid;}
+    div#document .lowerborder {display: {$LNWV};}
+    div.address {font-size: {$CISZ}px; line-height: {$CILH}px; margin-top: {$CIMT}px;}
+    div#document table.skills td {padding-top: {$TDMT}px;}
+    div.resumeTitle {font-size: {$RTTL}px; line-height: {$RTLH}px;}
+    div.execRsmTitle {font-size: {$ETTL}px; line-height: {$ETLH}px;}
+    span.compDescWrap {margin-bottom: {$CDES}px;}
+
+    /*FIX for Re-calculating width of singlecolumn for CL*/
+    div#document .sectionCL .singlecolumn {margin-left: 0!important; width: 100%; font-size: {$FTSZ}px;}
+    div.address2 {font-size: {$FTSZ}px; line-height: {$FTLH}px;}
+  </style>
+    <style type="text/css" id="dynamic">
+    div#document {line-height: 12px;}
+    div#document table {line-height: 12px;}
+    div#document.pagesize {width: 532px;}
+    div#document.vmargins {padding-top: 27px; padding-bottom: 27px;}
+    div#document.hmargins {padding-left: 40px; padding-right: 40px;}
+    div#document .section {margin-top: 8px;}
+    div#document div.firstsection {margin-top: 0;}
+    div#document div.SECTION_CNTC {margin-top: 0;}
+    div#document div.heading {margin-bottom: 2px;}
+    div#document div.paragraph {margin-top: 7px;}
+    div#document div.firstparagraph {margin-top: 0;}
+    div#document .singlecolumn, div#document .maincolumn {margin-left: 50px; width: 482px;}
+    .fontsize {font-size: 10px;}
+    .fontface {font-family: Georgia, serif;}
+    div#document div.sectiontitle {font-size: 12px; line-height: 14px;}
+    div.name {font-size: 20px; line-height: 24px;}
+    div#document .bottomborder {border-bottom: 2px solid;}
+    div#document .lowerborder {display: inherit;}
+    div.address {font-size: 9px; line-height: 11px; margin-top: 2px;}
+    div#document table.skills td {padding-top: 2px;}
+    div.resumeTitle {font-size: 12px; line-height: 16px;}
+    div.execRsmTitle {font-size: 11px; line-height: 13px;}
+    span.compDescWrap {margin-bottom: 2px;}
+
+    /*FIX for Re-calculating width of singlecolumn for CL*/
+    div#document .sectionCL .singlecolumn {margin-left: 0!important; width: 100%; font-size: 10px;}
+    div.address2 {font-size: 10px; line-height: 12px;}
+  </style>
+  </head>
+  <body>
+    <div id="document" class="fontsize fontface vmargins hmargins linespacing pagesize">
+      <div id="SECTION_NAME407750594" class="section firstsection" style="
+      padding-top:0px;
+    ">
+        <div id="PARAGRAPH_407750594_1" class="paragraph PARAGRAPH_NAME firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="name bottomborder">
+          <span class="field" id="407750594FNAM1">Matthew</span><span></span> <span class="field" id="407750594LNAM1">Egbers</span>
+        </div>
+        <div class="lowerborder bottomborder"></div>
+      </div>
+      </div>
+      <div id="SECTION_CNTC407750595" class="section SECTION_CNTC" style="
+      padding-top:0px;
+    ">
+        <div id="PARAGRAPH_407750595_1" class="paragraph PARAGRAPH_CNTC firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="address">
+          <span class="field" id="407750595STRT1">29319 Glenbrook Dr</span><span>, </span>
+          <span class="spaced field" id="407750595CITY1">Farmington Hills</span><span>, </span>
+          <span class="spaced field" id="407750595STAT1">Mi</span><span> </span>
+          <span class="spaced field" id="407750595ZIPC1">48331</span>
+          <span> - </span>
+          <span class="field" id="407750595HPHN1"></span>
+          <span> - </span>
+          <span class="field" id="407750595CPHN1">248-752-6993</span><span> (C) </span>
+          <span> - </span>
+          <span class="field" id="407750595EMAI1">matt_egbers@yahoo.com</span>
+        </div>
+      </div>
+      </div>
+      <div id="SECTION_SUMM407750596" class="section" style="
+      padding-top:0px;
+    ">
+        <div class="heading">
+        <div id="SECTNAME_SUMM407750596" class="sectiontitle">Summary</div>
+      </div>
+        <div id="PARAGRAPH_407750596_1" class="paragraph firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="field singlecolumn" id="407750596FRFM1"><P ALIGN="LEFT">Software Developer with 9 years experience <FONT >adept at application development, testing and optimization. Excels at Java/J2EE application development, including coordinating planning, programming and implementation for core modules.  Performed this function in the Automotive, Government, Health Care, Education, Telecommunications and Marketing Research industries.</P></div>
+      </div>
+      </div>
+      <div id="SECTION_HILT407859996" class="section" style="
+      padding-top:0px;
+    ">
+        <div class="heading">
+        <div id="SECTNAME_HILT407859996" class="sectiontitle">Key Skills</div>
+      </div>
+        <div id="PARAGRAPH_407859996_1" class="paragraph firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn maincolumn">
+          <table class="twocol">
+            <tr>
+              <td class="field twocol_1" id="407859996SKC11"><UL><LI>Java/J2EE</LI><LI>Javascript</LI><LI>Test Driven (JUnit and Mockito)</LI><LI>Agile Software Methodologies</LI></UL></td>
+              <td class="field twocol_2" id="407859996SKC21"><UL><LI>Web Services (REST and SOAP)</LI><LI>Spring Framework</LI><LI>SQL</LI></UL></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      </div>
+      <div id="SECTION_ACCM407751274" class="section" style="
+      padding-top:0px;
+    ">
+        <div class="heading">
+        <div id="SECTNAME_ACCM407751274" class="sectiontitle">Accomplishments</div>
+      </div>
+        <div id="PARAGRAPH_407751274_1" class="paragraph firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="field singlecolumn" id="407751274FRFM1"><UL><LI>Built mobile version of a eLearning platform.  The application was memory intensive and the challenge was getting it to run in Mobile Safari's 64MB of RAM.</LI><LI>Maintained several legacy applications.  Used TDD and other best practices to increase code coverage, and thus maintainability.  This usually meant going from less than 20% to greater than 85% code coverage.</LI><LI>Co-led a self organized team to create a mobile version of an existing product.  The result of this effort was the business seeing value in and funding it as a priority.</LI></UL></div>
+      </div>
+      </div>
+      <div id="SECTION_EXPR407750598" class="section" style="
+      padding-top:0px;
+    ">
+        <div class="heading">
+        <div id="SECTNAME_EXPR407750598" class="sectiontitle">Experience</div>
+      </div>
+        <div id="PARAGRAPH_407750598_1" class="paragraph firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP1">DTE Energy</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD1">November 2013</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT1">Current</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT1">Senior Software Developer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT1">Detroit</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA1">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES1"><P ALIGN="LEFT">Worked on the Web Services team.  The team is responsible for 12 web services, both REST and SOAP, that are consumed by various front ends.</P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_2" class="paragraph" style="
+      padding-top:10px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP2">Cengage Learning</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD2">March 2010</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT2">November 2014</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT2">Senior Software Developer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT2">Farmington Hills</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA2">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES2"><P ALIGN="LEFT">Developed and maintained a system for the higher learning market.  The platform allows instructors to embed assignments and other content in line of online textbook.  The application has rich client interface, and it communicates to a RESTful back end server for data persistence.  </P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_3" class="paragraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP3">Budco</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD3">May 2009</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT3">March 2010</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT3">Software Developer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT3">Highland Park</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA3">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES3"><P ALIGN="LEFT">Maintained and improved a customer tracking system.  The system is responsible for registering and communicating with customers and then reporting on the results.  </P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_4" class="paragraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP4">University of Michigan Health Systems</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD4">August 2008</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT4">March 2009</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT4">Software Developer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT4">Ann Arbor</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA4">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES4"><P ALIGN="LEFT">Member of the Custom Application Team. The team of 8 developers were responsible for the maintenance and enhancements of 15+ Application.  The applications were both web based and desktop.</P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_5" class="paragraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP5">ACN Incorporated</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD5">October 2007</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT5">July 2008</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT5">Software Engineer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT5">Farmington Hills</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA5">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES5"><P ALIGN="LEFT">Maintained and improved 2 legacy systems.  One was the customer facing application for ordering long distance phone service.  The second was used by customers to order VoIP service.</P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_6" class="paragraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP6">ePrize</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD6">May 2006</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT6">October 2007</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT6">Software Engineer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT6">Pleasant Ridge</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA6">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES6"><P ALIGN="LEFT">Developed wizard driven promotion engine.  The application allows users to deploy and administrate semi-custom flash promotions.  The actual promotion games were in Flash and communicated with a Java back end.  There was also a Java web application for administration and reporting.</P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_7" class="paragraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP7">Oakland County</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD7">August 2005</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT7">May 2006</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT7">Junior Web Application Developer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT7">Pontiac </span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA7">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES7"><P ALIGN="LEFT">Developed a web based J2EE application for the Oakland County Medical Examiners Office.  The system was a replacement for an existing VB application.</P></span>
+          </span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_407750598_8" class="paragraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname" id="407750598COMP8">General Motors</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" format="%B %Y" id="407750598JSTD8">September 2004</span><span> to </span>
+              <span class="jobdates" format="%B %Y" id="407750598EDDT8">August 2005</span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="jobtitle" id="407750598JTIT8">Junior Application Developer</span><br>
+            <span class="joblocation jobcity" id="407750598JCIT8">Detroit</span><span>, </span>
+            <span class="joblocation jobstate" id="407750598JSTA8">Mi</span>
+          </span>
+          <span class="paddedline">
+            <span class="jobline" id="407750598JDES8"><P ALIGN="LEFT">Worked on a team that developed a system for the Standards Team at GM.  The application would take employee requests for technology standardization and then track them through the approval process.</P></span>
+          </span>
+        </div>
+      </div>
+      </div>
+      <div id="SECTION_EDUC407750599" class="section" style="
+      padding-top:0px;
+    ">
+        <div class="heading">
+        <div id="SECTNAME_EDUC407750599" class="sectiontitle">Education</div>
+      </div>
+        <div id="PARAGRAPH_407750599_1" class="paragraph firstparagraph" style="
+      padding-top:0px;
+    ">
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="companyname companyname_educ" id="407750599SCHO1">University of Vermont</span><span></span>
+            <span class="datesWrapper">
+              <span class="jobdates" id="407750599GRYR1">2004</span><span></span>
+            </span>
+          </span>
+          <span class="paddedline">
+            <span class="degree" id="407750599DGRE1">Bachelor of Science</span><span>: </span>
+            <span class="programline" id="407750599STUY1">Computer Science</span>
+          </span>
+          <span class="paddedline">
+            <span class="joblocation jobcity" id="407750599SCIT1">Burlington </span><span>, </span>
+            <span class="joblocation jobstate" id="407750599SSTA1">VT</span>
+            <span class="joblocation jobstate" id="407750599SCNT1"></span>
+          </span>
+          
+          <span class="paddedline">
+            <span class="field" id="407750599FRFM1"></span>
+          </span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
